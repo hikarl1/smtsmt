@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ih takotnyo</title>
+<link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: black;
+    color: red;
+    font-family: 'Creepster', cursive;
+    flex-direction: column;
+    margin: 0;
+  }
+  h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+  .button {
+    padding: 20px 40px;
+    font-size: 1.5rem;
+    background: #330000;
+    color: #ff0000;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+  }
+  .button:hover {
+    background: #660000;
+  }
+</style>
+</head>
+<body>
+  <h1>horror bat</h1>
+  <button class="button" id="startBtn">kelik aku kelik aku</button>
+
+  <audio id="bgMusic" src="aboutyou.OGG" loop></audio>
+
+  <script>
+    const btn = document.getElementById("startBtn");
+    const song = document.getElementById("bgMusic");
+
+    // Flickering horror background
+    const horrorGradients = [
+      "linear-gradient(45deg, #000000, #330000)",
+      "linear-gradient(45deg, #1a0000, #4b0000)",
+      "linear-gradient(45deg, #2e0000, #660000)"
+    ];
+    let i = 0;
+    setInterval(() => {
+      document.body.style.transition = "background 1s";
+      document.body.style.background = horrorGradients[i];
+      i = (i + 1) % horrorGradients.length;
+    }, 1000);
+
+    // Click-to-play music and redirect
+    btn.addEventListener("click", () => {
+      song.play().then(() => {
+        // Redirect after a short delay so music starts
+        setTimeout(() => { window.location.href = "index.html"; }, 500);
+      }).catch(err => {
+        alert("Music blocked by browser. Press play manually if needed.");
+      });
+    });
+  </script>
+</body>
+</html>

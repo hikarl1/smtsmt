@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> 00:00 </title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>HAPIBIDI KANSUY SKIBIDIIIW</h1>
+    <p>from guah sipaling zigma</p>
+    <a href="surp.html" class="button">PENCET ATUH JAN MALUMALU</a>
+  </div>
+
+  <audio src="aboutyou.MP3" autoplay loop></audio>
+
+  <script>
+  const colors = [
+    "#ff0080", "#ff8c00", "#40e0d0", "#ff69b4", "#8a2be2", "#00ff00", "#ff4500"
+  ];
+  let i = 0;
+
+  setInterval(() => {
+    // Change background color smoothly
+    document.body.style.transition = "background 0.5s";
+    document.body.style.background = colors[i];
+    i = (i + 1) % colors.length;
+  }, 500); // change every 500ms
+</script>
+
+</body>
+</html>
